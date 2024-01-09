@@ -1,5 +1,5 @@
 # ASREProast to Zerologon Writeup
-
+Try this -> https://github.com/XiaoliChan/zerologon-Shot
 
 ### There are numerous methods to obtain Domain Admin privileges in this lab. In this write-up, I'll demonstrate one of them. I highly recommend exploring the entire lab to discover your own path towards achieving Domain Admin status.
 
