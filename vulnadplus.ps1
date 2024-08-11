@@ -607,4 +607,4 @@ function Invoke-VulnAD {
 	Sleep 30; Restart-Computer
 }
 
-Invoke-VulnAD -UsersLimit 20 -DomainName "vuln.kv"
+Invoke-VulnAD -UsersLimit 40 -DomainName "vuln.kv"
