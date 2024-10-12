@@ -92,8 +92,8 @@ IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com
 :warning: Disclaimer: Este script es solo para uso educativo y personal. No lo utilices para acceder a redes de terceros sin autorización, ya que esto es ilegal y contrario a los términos de uso de este proyecto.
 
 ## :email: Contacto 
-* :busts_in_silhouette: **Dzhoni_dev**: [GitHub](https://github.com/safebuffer/vulnerable-AD) - Desarrollador Vuln ad plus
-* :busts_in_silhouette: **Dzhoni_dev**: [GitHub](https://github.com/WaterExecution/vulnerable-AD-plus) - Actualización de versión
+* :busts_in_silhouette: **Hossam**: [GitHub](https://github.com/safebuffer/vulnerable-AD) - Desarrollador Vuln ad plus
+* :busts_in_silhouette: **WaterExecution**: [GitHub](https://github.com/WaterExecution/vulnerable-AD-plus) - Actualización de versión
 * :busts_in_silhouette: **Dzhoni_dev**: [GitHub](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/Wifite-Utility) - Contribución Readme
 
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
