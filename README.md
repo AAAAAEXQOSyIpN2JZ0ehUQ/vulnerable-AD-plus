@@ -3,70 +3,74 @@
   <br>
 </h1>
 
-Cree un directorio activo vulnerable que le permita probar la mayoría de los ataques al directorio activo en el laboratorio local.
+# Vuln AD Plus :octocat:
 
-### Características principales
-- Ataques aleatorios
-- Cobertura total de los ataques mencionados.
-- necesita ejecutar el script en DC con Active Directory instalado 
-- Algunos de los ataques requieren una estación de trabajo del cliente.
-- 
-### Redacción
-Ahora incluye una sección de reseñas [**WriteUp**](WriteUp).
+## Información
+Vulnerable-AD-Plus es un entorno de laboratorio diseñado para simular un Directorio Activo vulnerable, permitiendo practicar y probar diversos ataques en un entorno controlado. Ideal para pruebas de penetración y formación en seguridad.
 
-### Ataques admitidos
-- Abusar de las ACL/ACE
+## Características Principales
+- Escenario de pruebas para ataques aleatorios al Directorio Activo.
+- Cobertura completa de los ataques comunes en AD.
+- Requiere ejecutar el script en un Controlador de Dominio con AD instalado.
+- Algunos ataques necesitan una estación de trabajo de cliente adicional.
+
+## Redacción
+Incluye una sección dedicada a reseñas y soluciones: WriteUp.
+
+## Ataques Admitidos
+- Abuso de ACL/ACE
 - Kerberoasting
-- Tostado AS-REP
+- AS-REP Roasting
 - Abuso de DnsAdmins (...)
-- Contraseña en el comentario del usuario AD
+- Contraseñas en comentarios de usuarios de AD
 - Pulverización de contraseñas
-- DCSincronización (...)
-- Billete Plata (...)
-- Billete Dorado (...)
-- Pasar el hash (...)
-- Pase el billete (...)
+- Sincronización de DC (DCSync) (...)
+- Ataques de Ticket Plata (...)
+- Ataques de Ticket Dorado (...)
+- Pass-the-Hash (...)
+- Pass-the-Ticket (...)
 - Firma SMB deshabilitada
-- Mal permiso de WinRM
-- Consulta LDAP anónima
-- Participación pública de PYMES
-- Zerologon (Verificar versión)
+- Permisos inseguros de WinRM
+- Consultas LDAP anónimas
+- Compartición pública de SMB
+- Zerologon (verificar versión)
 
+## Configuración del Dominio
+- -DomainName: "vuln.internal"
+- -DomainNetbiosName: "vuln"
 
-### Ejemplo
-```powershell
-# if you didn't install Active Directory yet , you can try
+## Comandos para Configurar en Windows Server 2016
+### Si aún no has instalado Active Directory, ejecuta los siguientes comandos:
 
-Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath "C:\\Windows\\NTDS" -DomainMode "7" -DomainName "change.me" -DomainNetbiosName "change" -ForestMode "7" -InstallDns:$true -LogPath "C:\\Windows\\NTDS" -NoRebootOnCompletion:$false -SysvolPath "C:\\Windows\\SYSVOL" -Force:$true
-
-# if you already installed Active Directory, just run the script !
-
-IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/WaterExecution/vulnerable-AD-plus/master/vulnadplus.ps1"));
-Invoke-VulnAD -UsersLimit 100 -DomainName "change.me"
-```
-
-### Cambiar  vuln.kv y vuln
-
--DomainName "vuln.kv"
--DomainNetbiosName "vuln"
-
-### Estable en Windows Server 2016 
+Instalar la Función de AD DS:
 ```powershell
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
-
-Import-Module ADDSDeployment
-
-Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath "C:\\Windows\\NTDS" -DomainMode "7" -DomainName "vuln.kv" -DomainNetbiosName "vuln" -ForestMode "7" -InstallDns:$true -LogPath "C:\\Windows\\NTDS" -NoRebootOnCompletion:$false -SysvolPath "C:\\Windows\\SYSVOL" -Force:$true
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-
-IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/kvlx-alt/vulnerable-AD-plus/master/vulnadplus.ps1")); Invoke-VulnAD -UsersLimit 20 -DomainName "vuln.kv"
 ```
 
-### Modo de dominio
+Importar el Módulo de AD DS:
+```powershell
+Import-Module ADDSDeployment
+```
 
-Aquí está la lista completa de los valores de -DomainMode que corresponden a cada versión de Windows Server y su numeración interna:
+Instalar el Directorio Activo:
+```powershell
+Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath "C:\Windows\NTDS" -DomainMode "7" -DomainName "vuln.internal" -DomainNetbiosName "vuln" -ForestMode "7" -InstallDns:$true -LogPath "C:\Windows\NTDS" -NoRebootOnCompletion:$false -SysvolPath "C:\Windows\SYSVOL" -Force:$true
+```
 
+### Si ya tienes Active Directory instalado, simplemente ejecuta el script:
+
+Forzar TLS:
+```powershell
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+```
+
+Ejecutar el Script:
+```powershell
+IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/kvlx-alt/vulnerable-AD-plus/master/vulnadplus.ps1")); Invoke-VulnAD -UsersLimit 20 -DomainName "vuln.internal"
+```
+
+## Valores para Modo de Dominio
+Los valores de -DomainMode que corresponden a cada versión de Windows Server son:
 - Windows 2000 Server: "Win2000" (Valor 0)
 - Windows Server 2003: "Win2003" (Valor 2)
 - Windows Server 2008: "Win2008" (Valor 3)
@@ -77,4 +81,4 @@ Aquí está la lista completa de los valores de -DomainMode que corresponden a c
 - Windows Server 2019: "Win2019" (Valor 8)
 - Windows Server 2022: "Win2022" (Valor 9)
 
-Estos valores se utilizan para configurar el nivel funcional del dominio, asegurando la compatibilidad y las funcionalidades de Active Directory adecuadas para cada versión del servidor.
+Estos valores configuran el nivel funcional del dominio para garantizar la compatibilidad y las funciones adecuadas para cada versión de Windows Server.
