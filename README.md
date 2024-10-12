@@ -1,9 +1,5 @@
- <h1 align="center">
-  Vulnerable-AD-Plus
-  <br>
-</h1>
-
 # Vuln ad plus :octocat:
+Vulnerable-AD-Plus
 
 ## :information_source: Descripción
 Cree un directorio activo vulnerable que le permita probar la mayoría de los ataques al directorio activo en el laboratorio local.
