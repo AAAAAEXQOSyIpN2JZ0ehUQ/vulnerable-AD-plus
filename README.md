@@ -10,29 +10,29 @@ Cree un directorio activo vulnerable que le permita probar la mayoría de los at
 - Cobertura total de los ataques mencionados.
 - necesita ejecutar el script en DC con Active Directory instalado 
 - Algunos de los ataques requieren una estación de trabajo del cliente.
-- 
+
 ## :bookmark_tabs: Redacción
 
 Ahora incluye una sección de reseñas [**WriteUp**](WriteUp).
 
 ## :computer: Ataques admitidos
 
-- Abusar de las ACL/ACE
+- Abusing ACLs/ACEs
 - Kerberoasting
-- Tostado AS-REP
-- Abuso de DnsAdmins (...)
-- Contraseña en el comentario del usuario AD
-- Pulverización de contraseñas
-- DCSincronización (...)
-- Billete Plata (...)
-- Billete Dorado (...)
-- Pasar el hash (...)
-- Pase el billete (...)
-- Firma SMB deshabilitada
-- Mal permiso de WinRM
-- Consulta LDAP anónima
-- Participación pública de PYMES
-- Zerologon (Verificar versión)
+- AS-REP Roasting
+- Abuse DnsAdmins (...)
+- Password in AD User comment
+- Password Spraying
+- DCSync (...)
+- Silver Ticket (...)
+- Golden Ticket (...)
+- Pass-the-Hash (...)
+- Pass-the-Ticket (...)
+- SMB Signing Disabled
+- Bad WinRM permission
+- Anonymous LDAP query
+- Public SMB Share
+- Zerologon (Check version)
 
 ### Modo de dominio
 
