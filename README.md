@@ -34,6 +34,24 @@ Ahora incluye una sección de reseñas [**WriteUp**](WriteUp).
 - Participación pública de PYMES
 - Zerologon (Verificar versión)
 
+### Modo de dominio
+
+Aquí está la lista completa de los valores de -DomainMode que corresponden a cada versión de Windows Server y su numeración interna:
+
+| :computer: Windows Server Version | :gear: Nombre Interno | :hash: Valor |
+|-----------------------------------|-----------------------|--------------|
+| Windows 2000 Server               | "Win2000"              | Valor 0      |
+| Windows Server 2003               | "Win2003"              | Valor 2      |
+| Windows Server 2008               | "Win2008"              | Valor 3      |
+| Windows Server 2008 R2            | "Win2008R2"            | Valor 4      |
+| Windows Server 2012               | "Win2012"              | Valor 5      |
+| Windows Server 2012 R2            | "Win2012R2"            | Valor 6      |
+| Windows Server 2016               | "Win2016"              | Valor 7      |
+| Windows Server 2019               | "Win2019"              | Valor 8      |
+| Windows Server 2022               | "Win2022"              | Valor 9      |
+
+Estos valores se utilizan para configurar el nivel funcional del dominio, asegurando la compatibilidad y las funcionalidades de Active Directory adecuadas para cada versión del servidor.
+
 ## Configuración del Dominio
 
 - -DomainName "vuln.internal "
@@ -70,19 +88,3 @@ if you already installed Active Directory, just run the script !
 ```powershell
 IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/kvlx-alt/vulnerable-AD-plus/master/vulnadplus.ps1")); Invoke-VulnAD -UsersLimit 20 -DomainName "vuln.internal "
 ```
-
-### Modo de dominio
-
-Aquí está la lista completa de los valores de -DomainMode que corresponden a cada versión de Windows Server y su numeración interna:
-
-- Windows 2000 Server: "Win2000" (Valor 0)
-- Windows Server 2003: "Win2003" (Valor 2)
-- Windows Server 2008: "Win2008" (Valor 3)
-- Windows Server 2008 R2: "Win2008R2" (Valor 4)
-- Windows Server 2012: "Win2012" (Valor 5)
-- Windows Server 2012 R2: "Win2012R2" (Valor 6)
-- Windows Server 2016: "Win2016" (Valor 7)
-- Windows Server 2019: "Win2019" (Valor 8)
-- Windows Server 2022: "Win2022" (Valor 9)
-
-Estos valores se utilizan para configurar el nivel funcional del dominio, asegurando la compatibilidad y las funcionalidades de Active Directory adecuadas para cada versión del servidor.
