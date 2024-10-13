@@ -64,29 +64,29 @@ Estos valores se utilizan para configurar el nivel funcional del dominio, asegur
 
 Si aún no ha instalado Active Directory, puede probar
 
-# Instalar la característica de AD DS: 
+**Instalar la característica de AD DS:** 
 ```powershell
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 ```
 
-# Importar el módulo ADDSDeployment:
+**Importar el módulo ADDSDeployment:**
 ```powershell
 Import-Module ADDSDeployment
 ```
 
-# Instalar el directorio activo:
+**Instalar el directorio activo:**
 ```powershell
 Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath "C:\\Windows\\NTDS" -DomainMode "7" -DomainName "vuln.internal " -DomainNetbiosName "vuln" -ForestMode "7" -InstallDns:$true -LogPath "C:\\Windows\\NTDS" -NoRebootOnCompletion:$false -SysvolPath "C:\\Windows\\SYSVOL" -Force:$true
 ```
 
-if you already installed Active Directory, just run the script !
+Si ya instalaste Active Directory, ¡simplemente ejecuta el script!
 
-# Forzar TLS:
+**Forzar TLS:**
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 ```
 
-# Ejecutar script:
+**Ejecutar script:**
 ```powershell
 IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/vulnerable-AD-plus/refs/heads/master/vulnadplus.ps1")); Invoke-VulnAD -UsersLimit 20 -DomainName "vuln.internal "
 ```
