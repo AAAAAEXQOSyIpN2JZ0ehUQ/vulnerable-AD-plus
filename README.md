@@ -4,7 +4,7 @@
 Vulnerable-AD-Plus
 
 ## :information_source: Descripción
-Cree un directorio activo vulnerable que le permita probar la mayoría de los ataques al directorio activo en el laboratorio local.
+Crea un directorio activo vulnerable que le permite probar la mayoría de los ataques al directorio activo en el laboratorio local.
 
 ## :star2: Características principales
 
@@ -40,17 +40,17 @@ Ahora incluye una sección de reseñas [**WriteUp**](WriteUp).
 
 Aquí está la lista completa de los valores de -DomainMode que corresponden a cada versión de Windows Server y su numeración interna:
 
-| :computer: Windows Server Version | :gear: Nombre Interno | :hash: Valor |
-|-----------------------------------|-----------------------|--------------|
-| Windows 2000 Server               | "Win2000"              | Valor 0      |
-| Windows Server 2003               | "Win2003"              | Valor 2      |
-| Windows Server 2008               | "Win2008"              | Valor 3      |
-| Windows Server 2008 R2            | "Win2008R2"            | Valor 4      |
-| Windows Server 2012               | "Win2012"              | Valor 5      |
-| Windows Server 2012 R2            | "Win2012R2"            | Valor 6      |
-| Windows Server 2016               | "Win2016"              | Valor 7      |
-| Windows Server 2019               | "Win2019"              | Valor 8      |
-| Windows Server 2022               | "Win2022"              | Valor 9      |
+| :computer: Windows Server Version | :gear: Nombre Interno | :hash: Valor | :link: Enlace de Descarga                       |
+|-----------------------------------|-----------------------|--------------|---------------------------------------------|
+| Windows 2000 Server               | "Win2000"              | Valor 0      | [Descargar Windows 2000 Server](#)          |
+| Windows Server 2003               | "Win2003"              | Valor 2      | [Descargar Windows Server 2003](#)          |
+| Windows Server 2008               | "Win2008"              | Valor 3      | [Descargar Windows Server 2008](#)          |
+| Windows Server 2008 R2            | "Win2008R2"            | Valor 4      | [Descargar Windows Server 2008 R2](#)       |
+| Windows Server 2012               | "Win2012"              | Valor 5      | [Descargar Windows Server 2012](#)          |
+| Windows Server 2012 R2            | "Win2012R2"            | Valor 6      | [Descargar Windows Server 2012 R2](https://www.microsoft.com/es-es/evalcenter/download-windows-server-2012-r2)       |
+| Windows Server 2016               | "Win2016"              | Valor 7      | [Descargar Windows Server 2016](https://www.microsoft.com/es-mx/evalcenter/download-windows-server-2016)          |
+| Windows Server 2019               | "Win2019"              | Valor 8      | [Descargar Windows Server 2019](https://www.microsoft.com/es-mx/evalcenter/download-windows-server-2019)          |
+| Windows Server 2022               | "Win2022"              | Valor 9      | [Descargar Windows Server 2022](https://www.microsoft.com/es-mx/evalcenter/download-windows-server-2022)          |
 
 Estos valores se utilizan para configurar el nivel funcional del dominio, asegurando la compatibilidad y las funcionalidades de Active Directory adecuadas para cada versión del servidor.
 
