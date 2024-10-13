@@ -56,9 +56,9 @@ Estos valores se utilizan para configurar el nivel funcional del dominio, asegur
 
 ## :gear: Configuración del Dominio
 
-- -DomainName "vuln.internal "
-- -DomainNetbiosName "vuln"
-- -UsersLimit 20
+- **`-DomainName "vuln.internal"`**: Establece el nombre completo del dominio (FQDN). En este caso, el dominio configurado será `vuln.internal`, que será utilizado para identificar el dominio en la red.
+- **`-DomainNetbiosName "vuln"`**: Define el nombre NetBIOS del dominio, que es una versión corta para compatibilidad con sistemas y aplicaciones que utilizan nombres NetBIOS. En este ejemplo, el nombre es `vuln`.
+- **`-UsersLimit 20`**: Configura el límite máximo de usuarios en el dominio. Aquí, se permite un máximo de 20 usuarios.
 
 ## :computer: Comandos en Windows Server 2016 
 
