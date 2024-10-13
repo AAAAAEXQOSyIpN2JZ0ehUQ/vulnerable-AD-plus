@@ -36,7 +36,7 @@ Ahora incluye una sección de reseñas [**WriteUp**](WriteUp).
 - Public SMB Share
 - Zerologon (Check version)
 
-### Modo de dominio
+## :globe_with_meridians: Modo de dominio
 
 Aquí está la lista completa de los valores de -DomainMode que corresponden a cada versión de Windows Server y su numeración interna:
 
@@ -54,13 +54,13 @@ Aquí está la lista completa de los valores de -DomainMode que corresponden a c
 
 Estos valores se utilizan para configurar el nivel funcional del dominio, asegurando la compatibilidad y las funcionalidades de Active Directory adecuadas para cada versión del servidor.
 
-## Configuración del Dominio
+## :gear: Configuración del Dominio
 
 - -DomainName "vuln.internal "
 - -DomainNetbiosName "vuln"
 - -UsersLimit 20
 
-### Comandos en Windows Server 2016 
+## :computer: Comandos en Windows Server 2016 
 
 Si aún no ha instalado Active Directory, puede probar
 
