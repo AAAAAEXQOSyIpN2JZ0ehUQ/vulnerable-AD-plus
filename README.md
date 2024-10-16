@@ -97,6 +97,6 @@ IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com
 * :busts_in_silhouette: **Hossam**: [GitHub](https://github.com/safebuffer/vulnerable-AD) - Desarrollador Vuln ad plus
 * :busts_in_silhouette: **WaterExecution**: [GitHub](https://github.com/WaterExecution/vulnerable-AD-plus) - Actualización de versión
 * :busts_in_silhouette: **kvlx-alt**: [YouTube](https://www.youtube.com/watch?v=s9dD_nINnkc&t=876s) - Contribución Video tutorial
-* :busts_in_silhouette: **Dzhoni_dev**: [GitHub](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/vulnerable-AD-plus?tab=readme-ov-file) - Contribución Readme
+* :busts_in_silhouette: **Dzhoni**: [GitHub](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/vulnerable-AD-plus?tab=readme-ov-file) - Contribución Readme
 
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
