@@ -1,7 +1,7 @@
 ﻿![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/vulnerable-AD-plus/blob/master/Imagenes/vulnerable-AD-plus.png)
 
-# Vuln ad plus :octocat:
-Vulnerable-AD-Plus
+# Vulnerable AD Plus :octocat:
+Vuln ad plus
 
 ## :information_source: Descripción
 Crea un directorio activo vulnerable que le permite probar la mayoría de los ataques al directorio activo en el laboratorio local.
@@ -56,9 +56,11 @@ Estos valores se utilizan para configurar el nivel funcional del dominio, asegur
 
 ## :gear: Configuración del Dominio
 
-- **`-DomainName "vuln.internal"`**: Establece el nombre completo del dominio (FQDN). En este caso, el dominio configurado será `vuln.internal`, que será utilizado para identificar el dominio en la red.
-- **`-DomainNetbiosName "vuln"`**: Define el nombre NetBIOS del dominio, que es una versión corta para compatibilidad con sistemas y aplicaciones que utilizan nombres NetBIOS. En este ejemplo, el nombre es `vuln`.
-- **`-UsersLimit 100`**: Configura el límite máximo de usuarios en el dominio. Aquí, se permite un máximo de 100 usuarios.
+- **`-DomainMode "7"`**: Establece el nivel funcional del dominio en Windows Server 2016, garantizando que las características del dominio sean compatibles con esta versión.
+- **`-DomainName "vuln.internal"`**: Define el nombre completo del dominio en formato FQDN (Fully Qualified Domain Name). En este caso, el dominio será vuln.internal.
+- **`-DomainNetbiosName "vuln"`**: Configura el nombre NetBIOS, que es una versión corta del nombre del dominio utilizada para compatibilidad con sistemas que no admiten nombres FQDN.
+- **`-ForestMode "7"`**: Establece el nivel funcional del bosque en Windows Server 2016, habilitando las características específicas de esta versión y anteriores.
+- **`-UsersLimit 100`**: Especifica un límite máximo de usuarios en el dominio. Aquí, se establece un máximo de 100 usuarios.
 
 ## :computer: Comandos en Windows Server 2016 
 
@@ -73,6 +75,14 @@ Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 ```powershell
 Import-Module ADDSDeployment
 ```
+
+## :gear: Configuración del Bosque y Dominio
+New-ADForest `
+    -ForestMode "7" ` # Nivel funcional del bosque (Windows Server 2016)
+    -DomainMode "7" ` # Nivel funcional del dominio (Windows Server 2016)
+    -DomainName "vuln.internal" ` # Nombre completo del dominio (FQDN)
+    -DomainNetbiosName "vuln" ` # Nombre NetBIOS del dominio
+    -UsersLimit 100 # Límite máximo de usuarios en el dominio (recomendado de usuarios entre 20 y 40)
 
 **Instalar el directorio activo:**
 ```powershell
