@@ -62,6 +62,16 @@ Estos valores se utilizan para configurar el nivel funcional del dominio, asegur
 - **`-ForestMode "7"`**: Establece el nivel funcional del bosque en Windows Server 2016, habilitando las características específicas de esta versión y anteriores.
 - **`-UsersLimit 100`**: Especifica un límite máximo de usuarios en el dominio. Aquí, se establece un máximo de 100 usuarios.
 
+## :gear: Configuración del Bosque y Dominio
+```textplain
+New-ADForest `
+    -ForestMode "7" ` # Nivel funcional del bosque (Windows Server 2016)
+    -DomainMode "7" ` # Nivel funcional del dominio (Windows Server 2016)
+    -DomainName "vuln.internal" ` # Nombre completo del dominio (FQDN)
+    -DomainNetbiosName "vuln" ` # Nombre NetBIOS del dominio
+    -UsersLimit 100 # Límite máximo de usuarios en el dominio (recomendado de usuarios entre 20 y 40)
+```
+
 ## :computer: Comandos en Windows Server 2016 
 
 Si aún no ha instalado Active Directory, puede probar
@@ -74,16 +84,6 @@ Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 **Importar el módulo ADDSDeployment:**
 ```powershell
 Import-Module ADDSDeployment
-```
-
-## :gear: Configuración del Bosque y Dominio
-```textplain
-New-ADForest `
-    -ForestMode "7" ` # Nivel funcional del bosque (Windows Server 2016)
-    -DomainMode "7" ` # Nivel funcional del dominio (Windows Server 2016)
-    -DomainName "vuln.internal" ` # Nombre completo del dominio (FQDN)
-    -DomainNetbiosName "vuln" ` # Nombre NetBIOS del dominio
-    -UsersLimit 100 # Límite máximo de usuarios en el dominio (recomendado de usuarios entre 20 y 40)
 ```
 
 **Instalar el directorio activo:**
