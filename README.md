@@ -38,7 +38,7 @@ Ahora incluye una sección de reseñas [**WriteUp**](WriteUp).
 
 ## :globe_with_meridians: Modo de dominio
 
-Aquí está la lista completa de los valores de -DomainMode que corresponden a cada versión de Windows Server y su numeración interna ademas de algunos enlace de Descarga:
+Aquí está la lista completa de los valores de -DomainMode que corresponden a cada versión de Windows Server, su numeración interna y enlaces de descarga:
 
 | :computer: Windows Server Version | :gear: Nombre Interno | :hash: Valor | :link: Enlace de Descarga                       |
 |-----------------------------------|-----------------------|--------------|---------------------------------------------|
