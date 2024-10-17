@@ -100,6 +100,7 @@ Si ya instalaste Active Directory, ¡simplemente ejecuta el script!
     -UsersLimit 100 # Límite máximo de usuarios en el dominio (recomendado de usuarios entre 20 y 40)
 ```
 
+
 ```powershell
 IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/vulnerable-AD-plus/refs/heads/master/vulnadplus.ps1")); Invoke-VulnAD -UsersLimit 20 -DomainName "vuln.internal "
 ```
