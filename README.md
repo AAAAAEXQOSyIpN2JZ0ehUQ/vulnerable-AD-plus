@@ -62,16 +62,6 @@ Estos valores se utilizan para configurar el nivel funcional del dominio, asegur
 - **`-ForestMode "7"`**: Establece el nivel funcional del bosque en Windows Server 2016, habilitando las características específicas de esta versión y anteriores.
 - **`-UsersLimit 100`**: Especifica un límite máximo de usuarios en el dominio. Aquí, se establece un máximo de 100 usuarios.
 
-## :gear: Configuración del Bosque y Dominio
-```textplain
-New-ADForest `
-    -ForestMode "7" ` # Nivel funcional del bosque (Windows Server 2016)
-    -DomainMode "7" ` # Nivel funcional del dominio (Windows Server 2016)
-    -DomainName "vuln.internal" ` # Nombre completo del dominio (FQDN)
-    -DomainNetbiosName "vuln" ` # Nombre NetBIOS del dominio
-    -UsersLimit 100 # Límite máximo de usuarios en el dominio (recomendado de usuarios entre 20 y 40)
-```
-
 ## :computer: Comandos en Windows Server 2016 
 
 Si aún no ha instalado Active Directory, puede probar
@@ -87,6 +77,13 @@ Import-Module ADDSDeployment
 ```
 
 **Instalar el directorio activo:**
+```textplain
+    -DomainMode "7" ` # Nivel funcional del dominio (Windows Server 2016)
+    -DomainName "vuln.internal" ` # Nombre completo del dominio (FQDN)
+    -DomainNetbiosName "vuln" ` # Nombre NetBIOS del dominio
+    -ForestMode "7" ` # Nivel funcional del bosque (Windows Server 2016)
+```
+
 ```powershell
 Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath "C:\\Windows\\NTDS" -DomainMode "7" -DomainName "vuln.internal " -DomainNetbiosName "vuln" -ForestMode "7" -InstallDns:$true -LogPath "C:\\Windows\\NTDS" -NoRebootOnCompletion:$false -SysvolPath "C:\\Windows\\SYSVOL" -Force:$true
 ```
@@ -99,6 +96,10 @@ Si ya instalaste Active Directory, ¡simplemente ejecuta el script!
 ```
 
 **Ejecutar script:**
+```textplain
+    -UsersLimit 100 # Límite máximo de usuarios en el dominio (recomendado de usuarios entre 20 y 40)
+```
+
 ```powershell
 IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/vulnerable-AD-plus/refs/heads/master/vulnadplus.ps1")); Invoke-VulnAD -UsersLimit 20 -DomainName "vuln.internal "
 ```
