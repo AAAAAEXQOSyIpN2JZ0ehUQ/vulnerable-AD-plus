@@ -77,12 +77,14 @@ Import-Module ADDSDeployment
 ```
 
 ## :gear: Configuración del Bosque y Dominio
+```textplain
 New-ADForest `
     -ForestMode "7" ` # Nivel funcional del bosque (Windows Server 2016)
     -DomainMode "7" ` # Nivel funcional del dominio (Windows Server 2016)
     -DomainName "vuln.internal" ` # Nombre completo del dominio (FQDN)
     -DomainNetbiosName "vuln" ` # Nombre NetBIOS del dominio
     -UsersLimit 100 # Límite máximo de usuarios en el dominio (recomendado de usuarios entre 20 y 40)
+```
 
 **Instalar el directorio activo:**
 ```powershell
